@@ -1,3 +1,5 @@
-This Repository is the default starter project that sets up all of the annoying things you'd normally have to do at the start of a project.
+This is a My Account Receipt that shows you information about your purchases.
 
-It sets up the directory structure and adds the default index, css and js files.
+I created a jQuery plugin to build out the Receipt.
+
+Please view the mockup within the images directory.
