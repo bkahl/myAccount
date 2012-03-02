@@ -3,24 +3,50 @@
   <head>
   	<title>My Account</title>
   	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-  	<link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     
     <div id="container">
-      <div id="header"></div>
-      <div id="content"></div>
-      <div id="footer"></div>
-    <div>
-      
+      <div id="myAccount">
+        <div class="title">My Account Dashboard</div>
+        <div class="content">
+          <div class="director none"></div>
+          <div class="rep none"></div>
+          
+          <div style="clear: both;"></div>
+          
+          <div class="contacts none"></div>
+          <div class="products none"></div>
+          
+          <div style="clear: both;"></div>
+        </div>
+      </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" charset="utf-8"></script>
   	<script type="text/javascript" src="js/jquery.myAccount.js"></script>
   	<script type="text/javascript">
   		$().ready(function() {
-  	  }
+        $(".director").myAccount({
+          type: 'director',
+          info: { name: 'Liam Doherty', phone: '416.848.3238', email: 'ldoherty@eloqua.com' }
+        });
+        $(".rep").myAccount({
+          type: 'rep',
+          info: { name: 'Bob Villa', phone: '416.848.3238', email: 'bob.villa@thisoldhouse.com' }
+        });
+        $(".contacts").myAccount({
+          type: 'contacts',
+          baseProductsAndContactsInfo: { product: 'ELOQUA Express', contacts: '1,000,000', renewalDate: '9/29/2012' }
+        });
+        $(".products").myAccount({
+          type: 'products',
+          addOnProducts: [{ product: 'Best Practices', licenses: '24894817057848', renewalDate: '10/29/2013' },
+                          { product: 'ELOQUA Express', licenses: '54545848157843', renewalDate: '9/29/2012' }]
+        });
+  	  });
   	</script>
   	
   </body>

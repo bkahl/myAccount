@@ -1,0 +1,249 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+  
+a{
+  text-decoration: none;
+}
+
+$bodyBkgdImg: url(../images/background-img.png);
+
+$titleBarGradientFromColor: #fff;
+$titleBarGradientToColor: #d7d7d7;
+
+$myAccountFont: "HelveticaNeue-Light","Helvetica Neue Light",helvetica,arial,sans-serif;
+$myAccountFontSize: 11px;
+$myAccountColor: #212222;
+$myAccountBorderColor: #686868;
+$myAccountInnerBorderColor: #939393;
+$myAccountBackgroundColor: #f5f6f5;
+$myAccountBorderRadius: 4px;
+
+$mainTitleHeight: 40px;
+$mainTitleLineHeight: 40px;
+$mainTitleFontSize: 16px;
+$mainTitleColor: #12314b;
+
+$mainContentPadding: 15px;
+
+$tableTitleHeight: 24px;
+$tableTitleLineHeight: 24px;
+$smallTableWidth: 175px;
+$bigTableWidth: 375px;
+$innerTableRadius: 4px;
+
+$innerTitleFontSize: 12px;
+
+@mixin tableHeaderBackground($fromColor, $toColor) {
+  background: $titleBarGradientFromColor;
+  background: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
+  background: -moz-linear-gradient(-90deg, $fromColor, $toColor);
+}
+
+@mixin tableTitle($height, $line-height, $font-size, $font-weight, $color, $text-align, $border-bottom) {
+  height: $height;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  text-align: $text-align;
+  border-bottom: 1px solid $border-bottom;
+}
+
+@mixin table($width, $borderColor) {
+  width: $width;
+  border: 1px solid $borderColor;
+}
+
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin borderTableTopRadius($topRadius) {
+  border-top-right-radius: $topRadius;
+  -moz-border-top-right-radius: $topRadius;
+  -webkit-border-top-right-radius: $topRadius;
+  border-top-left-radius: $topRadius;
+  -moz-border-top-left-radius: $topRadius;
+  -webkit-border-top-left-radius: $topRadius;
+}
+
+@mixin borderTableBottomRadius($bottomRadius) {
+  border-bottom-right-radius: $bottomRadius;
+  -moz-border-bottom-right-radius: $bottomRadius;
+  -webkit-border-bottom-right-radius: $bottomRadius;
+  border-bottom-left-radius: $bottomRadius;
+  -moz-border-bottom-left-radius: $bottomRadius;
+  -webkit-border-bottom-left-radius: $bottomRadius;
+}
+
+@mixin innerTableTitle($padding-left) {
+  @include borderTableTopRadius($innerTableRadius);
+  @include tableHeaderBackground($titleBarGradientFromColor, $titleBarGradientToColor);
+  @include tableTitle($tableTitleHeight, $tableTitleLineHeight, $innerTitleFontSize, bold, $myAccountColor, left, $myAccountInnerBorderColor);
+  padding-left: $padding-left;
+}
+
+@mixin innerTableContent($borderTableBottomRadius, $padding, $float) {
+  @include borderTableBottomRadius($borderTableBottomRadius);
+  padding: $padding;
+  float: $float;
+}
+
+.none{
+  display: none;
+}
+
+table{
+  tr{
+  
+  }
+  
+  td{
+    &.name{ 
+      font-weight: bold;
+    }
+    &.email{ 
+      a{
+        color: #396498;
+      }
+    }
+  }
+}
+
+body{
+  background: $bodyBkgdImg;
+
+  #myAccount{
+    margin-top: 50px;
+    width: 405px;
+    border: 1px solid $myAccountBorderColor;
+    font: $myAccountFontSize $myAccountFont;
+    color: $myAccountColor;
+    background: $myAccountBackgroundColor;
+    @include borderRadius($myAccountBorderRadius);
+    
+    .title{
+      @include borderTableTopRadius($myAccountBorderRadius);
+      @include tableHeaderBackground($titleBarGradientFromColor, $titleBarGradientToColor);
+      @include tableTitle($mainTitleHeight, $mainTitleLineHeight, $mainTitleFontSize, bold, $mainTitleColor, center, $myAccountInnerBorderColor);
+    }
+    
+    .content{
+      padding: $mainContentPadding;
+      @include borderTableBottomRadius($myAccountBorderRadius);
+      
+      .director{
+        float: left;
+        margin-bottom: 15px;
+        @include table($smallTableWidth, $myAccountInnerBorderColor);
+        @include borderRadius($innerTableRadius);
+        
+        .inner-table-title{
+          @include innerTableTitle(7px);
+        }
+        
+        .inner-table-content{
+          @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
+        }
+      }
+      
+      .rep{
+        float: right;
+        margin-bottom: 15px;
+        @include table($smallTableWidth, $myAccountInnerBorderColor);
+        @include borderRadius($innerTableRadius);
+        
+        .inner-table-title{
+          @include innerTableTitle(7px);
+        }
+        
+        .inner-table-content{
+          @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
+        }
+      }
+      
+      .contacts{
+        margin-bottom: 15px;
+        @include table($bigTableWidth, $myAccountInnerBorderColor);
+        @include borderRadius($innerTableRadius);
+              
+        .inner-table-title{
+          @include innerTableTitle(7px);
+        }
+        
+        .inner-table-content{
+          @include innerTableContent($innerTableRadius, 5px, none);
+        }
+      }
+      
+      .products{
+        @include table($bigTableWidth, $myAccountInnerBorderColor);
+        @include borderRadius($innerTableRadius);
+        
+        .inner-table-title{
+          @include innerTableTitle(7px);
+        }
+        
+        .inner-table-content{
+          @include innerTableContent($innerTableRadius, 5px, none);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
