@@ -47,6 +47,34 @@ a {
 .none {
   display: none; }
 
+.row {
+  width: 365px;
+  height: 18px;
+  line-height: 18px; }
+
+.row .rowTitle {
+  width: auto;
+  margin-right: 5px;
+  font-weight: bold;
+  float: left; }
+
+.row .rowDots {
+  width: auto;
+  overflow: hidden;
+  float: left; }
+
+.row .rowValue {
+  width: auto;
+  margin-left: 10px;
+  float: right;
+  text-align: right; }
+
+table th.name {
+  background: #f3f3f3;
+  font-weight: bold;
+  border-bottom: 1px solid #b8b8b8; }
+table tr.odd {
+  background: #e7f1fb; }
 table td.name {
   font-weight: bold; }
 table td.email a {
@@ -60,7 +88,7 @@ body {
     border: 1px solid #686868;
     font: 11px "HelveticaNeue-Light", "Helvetica Neue Light", helvetica, arial, sans-serif;
     color: #212222;
-    background: #f5f6f5;
+    background: #e0e1e4;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px; }
@@ -78,7 +106,7 @@ body {
       line-height: 40px;
       font-size: 16px;
       font-weight: bold;
-      color: #12314b;
+      color: #212222;
       text-align: center;
       border-bottom: 1px solid #939393; }
     body #myAccount .content {
@@ -92,6 +120,7 @@ body {
       body #myAccount .content .director {
         float: left;
         margin-bottom: 15px;
+        background: #f5f6f5;
         width: 175px;
         border: 1px solid #939393;
         border-radius: 4px;
@@ -127,6 +156,7 @@ body {
       body #myAccount .content .rep {
         float: right;
         margin-bottom: 15px;
+        background: #f5f6f5;
         width: 175px;
         border: 1px solid #939393;
         border-radius: 4px;
@@ -161,6 +191,7 @@ body {
           float: left; }
       body #myAccount .content .contacts {
         margin-bottom: 15px;
+        background: #f5f6f5;
         width: 375px;
         border: 1px solid #939393;
         border-radius: 4px;
@@ -194,6 +225,7 @@ body {
           padding: 5px;
           float: none; }
       body #myAccount .content .products {
+        background: #f5f6f5;
         width: 375px;
         border: 1px solid #939393;
         border-radius: 4px;
@@ -224,5 +256,5 @@ body {
           border-bottom-left-radius: 4px;
           -moz-border-bottom-left-radius: 4px;
           -webkit-border-bottom-left-radius: 4px;
-          padding: 5px;
+          padding: 0 0 7px 0;
           float: none; }

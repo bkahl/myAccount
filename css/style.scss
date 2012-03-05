@@ -55,13 +55,13 @@ $myAccountFontSize: 11px;
 $myAccountColor: #212222;
 $myAccountBorderColor: #686868;
 $myAccountInnerBorderColor: #939393;
-$myAccountBackgroundColor: #f5f6f5;
+$myAccountBackgroundColor: #e0e1e4;
 $myAccountBorderRadius: 4px;
 
 $mainTitleHeight: 40px;
 $mainTitleLineHeight: 40px;
 $mainTitleFontSize: 16px;
-$mainTitleColor: #12314b;
+$mainTitleColor: #212222;
 
 $mainContentPadding: 15px;
 
@@ -71,6 +71,7 @@ $smallTableWidth: 175px;
 $bigTableWidth: 375px;
 $innerTableRadius: 4px;
 
+$innerTableBackgroundColor: #f5f6f5;
 $innerTitleFontSize: 12px;
 
 @mixin tableHeaderBackground($fromColor, $toColor) {
@@ -135,9 +136,50 @@ $innerTitleFontSize: 12px;
   display: none;
 }
 
+.row{
+  width: 365px; 
+  height: 18px; 
+  line-height: 18px;
+}
+
+.row .rowTitle{
+  width: auto; 
+  margin-right: 5px; 
+  font-weight: bold; 
+  float: left;
+}
+
+.row .rowDots{
+  width: auto; 
+  overflow: hidden; 
+  float: left;
+}
+
+.row .rowValue{
+  width: auto; 
+  margin-left: 10px; 
+  float: right; 
+  text-align: right;
+}
+
 table{
   tr{
   
+  }
+  
+  th{
+    &.name{
+      background: #f3f3f3;
+      font-weight: bold;
+      border-bottom: 1px solid #b8b8b8;
+    }  
+  }
+  
+  tr{
+    
+    &.odd{
+      background: #e7f1fb;
+    }
   }
   
   td{
@@ -177,6 +219,7 @@ body{
       .director{
         float: left;
         margin-bottom: 15px;
+        background: $innerTableBackgroundColor;
         @include table($smallTableWidth, $myAccountInnerBorderColor);
         @include borderRadius($innerTableRadius);
         
@@ -192,6 +235,7 @@ body{
       .rep{
         float: right;
         margin-bottom: 15px;
+        background: $innerTableBackgroundColor;
         @include table($smallTableWidth, $myAccountInnerBorderColor);
         @include borderRadius($innerTableRadius);
         
@@ -206,6 +250,7 @@ body{
       
       .contacts{
         margin-bottom: 15px;
+        background: $innerTableBackgroundColor;
         @include table($bigTableWidth, $myAccountInnerBorderColor);
         @include borderRadius($innerTableRadius);
               
@@ -219,6 +264,7 @@ body{
       }
       
       .products{
+        background: $innerTableBackgroundColor;
         @include table($bigTableWidth, $myAccountInnerBorderColor);
         @include borderRadius($innerTableRadius);
         
@@ -227,7 +273,7 @@ body{
         }
         
         .inner-table-content{
-          @include innerTableContent($innerTableRadius, 5px, none);
+          @include innerTableContent($innerTableRadius, 0 0 7px 0, none);
         }
       }
     }
