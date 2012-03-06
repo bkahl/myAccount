@@ -20,13 +20,13 @@ function myAccount(id,data){
         div += "<table>";
           div += "<tbody>";
             div += "<tr>";
-              div += "<td class='name'>"+data.info.name+"</td>";
+              div += "<td class='name' style='padding-top: 2px;'>"+data.info.name+"</td>";
             div += "</tr>";
             div += "<tr>";
-              div += "<td class='phone'>"+data.info.phone+"</td>";
+              div += "<td class='phone' style='padding-top: 4px;'>"+data.info.phone+"</td>";
             div += "</tr>";
             div += "<tr>";
-              div += "<td class='email'><a href='mailto:"+data.info.email+"'/a>"+data.info.email+"</td>";
+              div += "<td class='email' style='padding-top: 4px;'><a href='mailto:"+data.info.email+"'/a>"+data.info.email+"</td>";
             div += "</tr>";
           div += "</tbody>";
         div += "</table>";

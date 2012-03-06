@@ -60,7 +60,7 @@ $myAccountBorderRadius: 4px;
 
 $mainTitleHeight: 40px;
 $mainTitleLineHeight: 40px;
-$mainTitleFontSize: 16px;
+$mainTitleFontSize: 13px;
 $mainTitleColor: #212222;
 
 $mainContentPadding: 15px;
@@ -72,7 +72,7 @@ $bigTableWidth: 375px;
 $innerTableRadius: 4px;
 
 $innerTableBackgroundColor: #f5f6f5;
-$innerTitleFontSize: 12px;
+$innerTitleFontSize: 11px;
 
 @mixin tableHeaderBackground($fromColor, $toColor) {
   background: $titleBarGradientFromColor;
@@ -187,6 +187,7 @@ table{
       font-weight: bold;
     }
     &.email{ 
+      margin-top: 7px;
       a{
         color: #396498;
       }
@@ -230,6 +231,7 @@ body{
   overflow-y:hidden;
   box-shadow:inset 0 0 75px #202427;
   -moz-box-shadow:inset 0 0 75px #202427;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
   
   #container{
     height: 100%;
