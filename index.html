@@ -23,9 +23,15 @@
           <div style="clear: both;"></div>
         </div>
       </div>
-      <div id ="bottom-shadow"  style="position: relative; z-index:0; margin: 0 auto; top: -2px; width: 407px;">
-        <img src="images/bottom-shadow.png" width="407" height="16">
+      
+      
+      
+      <div id ="bottom">
+        <div class="top-radial-gradient-bg"></div>
+        <div class="bottom-radial-gradient-bg"></div>
+        <img src="images/bottom-shadow.png" width="409" height="23">
       </div>
+
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" charset="utf-8"></script>
@@ -47,20 +53,30 @@
         $(".products").myAccount({
           type: 'products',
           addOnProducts: [{ product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+          
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+        
                           { product: 'ELOQUA Express', licenses: '2 ', renewalDate: '9/29/2012' }]
         });
         
-        // var myActHeight = document.getElementById('myAccount');
-        // var shadowTopPosition = (myActHeight.clientHeight+45);
-        // $('#bottom-shadow').css('top',shadowTopPosition);
+        var myAccount = document.getElementById('myAccount'),
+            mAHeight = myAccount.clientHeight;
+            
+        $('.top-radial-gradient-bg').css('height',(mAHeight-30)+'px');
+        $('.bottom-radial-gradient-bg').css('height',mAHeight+'px');
+        $('#bottom').css('top','-'+mAHeight+'px').css('height',mAHeight+'px');
+        
   	  });
   	</script>
   	

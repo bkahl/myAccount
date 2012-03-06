@@ -1,3 +1,5 @@
+var d = false, r = false, c = false, p = false;
+
 function isEven(value){
   if (value%2 === 0) return true;
   else return false;
@@ -5,11 +7,14 @@ function isEven(value){
 
 function myAccount(id,data){
   
-  var div, tr;
+  var div, tr, count = 0, total;
   
   $(id).removeClass('none');
   
   if(data.type === "director" || data.type === "rep"){
+      if(data.type === "director") d += true;
+      else r += true;
+
       div = "<div class='inner-table-title'>"+data.title+"</div>";
       div += "<div class='inner-table-content'>";
         div += "<table>";
@@ -26,9 +31,11 @@ function myAccount(id,data){
           div += "</tbody>";
         div += "</table>";
       div += "</div>";
-    
+      
     $(id).append(div);
   }else if(data.type === "contacts"){
+    c += true;
+    
     div = "<div class='inner-table-title'>"+data.title+"</div>";
     div += "<div class='inner-table-content'>";
       div += "<div class='row'>";
@@ -50,20 +57,28 @@ function myAccount(id,data){
     
     $(id).append(div);
   }else if(data.type === "products"){
-    var count = 0, evenOdd;
-    
+    p += true;
+    var evenOdd;
+
     div = "<div class='inner-table-title'>"+data.title+"</div>";
-    div += "<div class='inner-table-content'>";
+    div += "<div id='products-header' class='inner-table-content'>";
       div += "<table width='375'>";
         div += "<tbody>";
           div += "<tr height='20' style='line-height: 20px;'>";
             div += "<th width='165' class='name' style='padding-left: 6px;' align='left'>Product</td>";
             div += "<th width='100' class='name' align='left'>Licenses</td>";
             div += "<th width='100' class='name' align='left'>Renewal Date</td>";
-          div += "</tr>";         
-
+          div += "</tr>"; 
+        div += "</tbody>";       
+      div += "</table>";
+    div += "</div>";
+    
+    div += "<div id='products-content' class='inner-table-content'>";
+      div += "<table width='375'>";
+        div += "<tbody>";
+          
           data.addOnProducts.forEach(function(o){
-            evenOdd = isEven(count);
+            var evenOdd = isEven(count);
             
             if(evenOdd) div += "<tr height='20' style='line-height: 20px;'>";
             else div += "<tr class='odd' height='20' style='line-height: 20px;'>";
@@ -77,8 +92,13 @@ function myAccount(id,data){
         div += "</tbody>";
       div += "</table>";
     div += "</div>";
-
+    
     $(id).append(div);
+  }
+  
+  if(count > 5) {
+    $('.products > #products-header .inner-table-content').css('padding','none !important');
+    $('.products > #products-content').css('height','101').css('overflow-y','auto').css('overflow-x','hidden').css('padding-bottom','7');
   }
 }
 
@@ -86,7 +106,7 @@ function calcTableSize(rt, rd, rv){
   var rowWidth = 365, rowTotal = 15, rowDotsWidth = 0;
   
   var rowTitle = document.getElementById(rt),
-      rowTitleWidth = rowTitle.clientWidth;
+      rowTitleWidth = (rowTitle.clientWidth+1);
   $(rowTitle).css('width',rowTitleWidth);
   rowTotal += rowTitleWidth;
   
@@ -129,12 +149,20 @@ function calcTableSize(rt, rd, rv){
 		
     myAccount(id, opts);
     
+    if(d) {
+      if(r) $('.director').css('width','175');
+      if(!r) $('.director').css('width','100%');
+    }else if(r) {
+      if(d) $('.rep').css('width','175'); $('.rep').css('width','175');
+      if(!d) $('.rep').css('width','100%');
+    }
+    
     if (options.type === "contacts"){
       calcTableSize('row1Title','row1Dots','row1Value');
       calcTableSize('row2Title','row2Dots','row2Value');
       calcTableSize('row3Title','row3Dots','row3Value');
     }
-    
+
 		return this;	
 	};
 

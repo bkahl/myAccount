@@ -80,181 +80,228 @@ table td.name {
 table td.email a {
   color: #396498; }
 
+.top-radial-gradient-bg {
+  background: none repeat scroll 0 0 #5C6164;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 -38px 175px #5b646b;
+  -moz-box-shadow: 0 -38px 175px #5b646b;
+  box-shadow: 0 -38px 175px #5b646b;
+  height: 350px;
+  left: 0;
+  position: absolute;
+  width: 406px; }
+
+.bottom-radial-gradient-bg {
+  background: none repeat scroll 0 0 #5C6164;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 38px 175px #5b646b;
+  -moz-box-shadow: 0 38px 175px #5b646b;
+  box-shadow: 0 38px 175px #5b646b;
+  height: 320px;
+  left: 0;
+  position: relative;
+  width: 320px; }
+
 body {
-  background: url(../images/background-img.png); }
-  body #myAccount {
-    margin-top: 50px;
-    width: 405px;
-    border: 1px solid #686868;
-    font: 11px "HelveticaNeue-Light", "Helvetica Neue Light", helvetica, arial, sans-serif;
-    color: #212222;
-    background: #e0e1e4;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px; }
-    body #myAccount .title {
-      border-top-right-radius: 4px;
-      -moz-border-top-right-radius: 4px;
-      -webkit-border-top-right-radius: 4px;
-      border-top-left-radius: 4px;
-      -moz-border-top-left-radius: 4px;
-      -webkit-border-top-left-radius: 4px;
-      background: white;
-      background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
-      background: -moz-linear-gradient(-90deg, white, #d7d7d7);
-      height: 40px;
-      line-height: 40px;
-      font-size: 16px;
-      font-weight: bold;
+  background: url(../images/background-img.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  box-shadow: inset 0 0 75px #202427;
+  -moz-box-shadow: inset 0 0 75px #202427; }
+  body #container {
+    height: 100%; }
+    body #container #myAccount {
+      margin-top: 50px;
+      width: 405px;
+      border: 1px solid #686868;
+      font: 11px "HelveticaNeue-Light", "Helvetica Neue Light", helvetica, arial, sans-serif;
       color: #212222;
-      text-align: center;
-      border-bottom: 1px solid #939393; }
-    body #myAccount .content {
-      padding: 15px;
-      border-bottom-right-radius: 4px;
-      -moz-border-bottom-right-radius: 4px;
-      -webkit-border-bottom-right-radius: 4px;
-      border-bottom-left-radius: 4px;
-      -moz-border-bottom-left-radius: 4px;
-      -webkit-border-bottom-left-radius: 4px; }
-      body #myAccount .content .director {
-        float: left;
-        margin-bottom: 15px;
-        background: #f5f6f5;
-        width: 175px;
-        border: 1px solid #939393;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px; }
-        body #myAccount .content .director .inner-table-title {
-          border-top-right-radius: 4px;
-          -moz-border-top-right-radius: 4px;
-          -webkit-border-top-right-radius: 4px;
-          border-top-left-radius: 4px;
-          -moz-border-top-left-radius: 4px;
-          -webkit-border-top-left-radius: 4px;
-          background: white;
-          background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
-          background: -moz-linear-gradient(-90deg, white, #d7d7d7);
-          height: 24px;
-          line-height: 24px;
-          font-size: 12px;
-          font-weight: bold;
-          color: #212222;
-          text-align: left;
-          border-bottom: 1px solid #939393;
-          padding-left: 7px; }
-        body #myAccount .content .director .inner-table-content {
-          border-bottom-right-radius: 4px;
-          -moz-border-bottom-right-radius: 4px;
-          -webkit-border-bottom-right-radius: 4px;
-          border-bottom-left-radius: 4px;
-          -moz-border-bottom-left-radius: 4px;
-          -webkit-border-bottom-left-radius: 4px;
-          padding: 5px 7px 16px;
-          float: left; }
-      body #myAccount .content .rep {
-        float: right;
-        margin-bottom: 15px;
-        background: #f5f6f5;
-        width: 175px;
-        border: 1px solid #939393;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px; }
-        body #myAccount .content .rep .inner-table-title {
-          border-top-right-radius: 4px;
-          -moz-border-top-right-radius: 4px;
-          -webkit-border-top-right-radius: 4px;
-          border-top-left-radius: 4px;
-          -moz-border-top-left-radius: 4px;
-          -webkit-border-top-left-radius: 4px;
-          background: white;
-          background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
-          background: -moz-linear-gradient(-90deg, white, #d7d7d7);
-          height: 24px;
-          line-height: 24px;
-          font-size: 12px;
-          font-weight: bold;
-          color: #212222;
-          text-align: left;
-          border-bottom: 1px solid #939393;
-          padding-left: 7px; }
-        body #myAccount .content .rep .inner-table-content {
-          border-bottom-right-radius: 4px;
-          -moz-border-bottom-right-radius: 4px;
-          -webkit-border-bottom-right-radius: 4px;
-          border-bottom-left-radius: 4px;
-          -moz-border-bottom-left-radius: 4px;
-          -webkit-border-bottom-left-radius: 4px;
-          padding: 5px 7px 16px;
-          float: left; }
-      body #myAccount .content .contacts {
-        margin-bottom: 15px;
-        background: #f5f6f5;
-        width: 375px;
-        border: 1px solid #939393;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px; }
-        body #myAccount .content .contacts .inner-table-title {
-          border-top-right-radius: 4px;
-          -moz-border-top-right-radius: 4px;
-          -webkit-border-top-right-radius: 4px;
-          border-top-left-radius: 4px;
-          -moz-border-top-left-radius: 4px;
-          -webkit-border-top-left-radius: 4px;
-          background: white;
-          background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
-          background: -moz-linear-gradient(-90deg, white, #d7d7d7);
-          height: 24px;
-          line-height: 24px;
-          font-size: 12px;
-          font-weight: bold;
-          color: #212222;
-          text-align: left;
-          border-bottom: 1px solid #939393;
-          padding-left: 7px; }
-        body #myAccount .content .contacts .inner-table-content {
-          border-bottom-right-radius: 4px;
-          -moz-border-bottom-right-radius: 4px;
-          -webkit-border-bottom-right-radius: 4px;
-          border-bottom-left-radius: 4px;
-          -moz-border-bottom-left-radius: 4px;
-          -webkit-border-bottom-left-radius: 4px;
-          padding: 5px;
-          float: none; }
-      body #myAccount .content .products {
-        background: #f5f6f5;
-        width: 375px;
-        border: 1px solid #939393;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px; }
-        body #myAccount .content .products .inner-table-title {
-          border-top-right-radius: 4px;
-          -moz-border-top-right-radius: 4px;
-          -webkit-border-top-right-radius: 4px;
-          border-top-left-radius: 4px;
-          -moz-border-top-left-radius: 4px;
-          -webkit-border-top-left-radius: 4px;
-          background: white;
-          background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
-          background: -moz-linear-gradient(-90deg, white, #d7d7d7);
-          height: 24px;
-          line-height: 24px;
-          font-size: 12px;
-          font-weight: bold;
-          color: #212222;
-          text-align: left;
-          border-bottom: 1px solid #939393;
-          padding-left: 7px; }
-        body #myAccount .content .products .inner-table-content {
-          border-bottom-right-radius: 4px;
-          -moz-border-bottom-right-radius: 4px;
-          -webkit-border-bottom-right-radius: 4px;
-          border-bottom-left-radius: 4px;
-          -moz-border-bottom-left-radius: 4px;
-          -webkit-border-bottom-left-radius: 4px;
-          padding: 0 0 7px 0;
-          float: none; }
+      background: #e0e1e4;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px; }
+      body #container #myAccount .title {
+        border-top-right-radius: 4px;
+        -moz-border-top-right-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        -moz-border-top-left-radius: 4px;
+        -webkit-border-top-left-radius: 4px;
+        background: white;
+        background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
+        background: -moz-linear-gradient(-90deg, white, #d7d7d7);
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #212222;
+        text-align: center;
+        border-bottom: 1px solid #939393; }
+      body #container #myAccount .content {
+        padding: 15px;
+        border-bottom-right-radius: 4px;
+        -moz-border-bottom-right-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        -moz-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px; }
+        body #container #myAccount .content .director {
+          float: left;
+          margin-bottom: 15px;
+          background: #f5f6f5;
+          width: 175px;
+          border: 1px solid #939393;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px; }
+          body #container #myAccount .content .director .inner-table-title {
+            border-top-right-radius: 4px;
+            -moz-border-top-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            -moz-border-top-left-radius: 4px;
+            -webkit-border-top-left-radius: 4px;
+            background: white;
+            background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
+            background: -moz-linear-gradient(-90deg, white, #d7d7d7);
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #212222;
+            text-align: left;
+            border-bottom: 1px solid #939393;
+            padding-left: 7px; }
+          body #container #myAccount .content .director .inner-table-content {
+            border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-bottom-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            padding: 5px 7px 16px;
+            float: left; }
+        body #container #myAccount .content .rep {
+          float: right;
+          margin-bottom: 15px;
+          background: #f5f6f5;
+          width: 175px;
+          border: 1px solid #939393;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px; }
+          body #container #myAccount .content .rep .inner-table-title {
+            border-top-right-radius: 4px;
+            -moz-border-top-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            -moz-border-top-left-radius: 4px;
+            -webkit-border-top-left-radius: 4px;
+            background: white;
+            background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
+            background: -moz-linear-gradient(-90deg, white, #d7d7d7);
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #212222;
+            text-align: left;
+            border-bottom: 1px solid #939393;
+            padding-left: 7px; }
+          body #container #myAccount .content .rep .inner-table-content {
+            border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-bottom-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            padding: 5px 7px 16px;
+            float: left; }
+        body #container #myAccount .content .contacts {
+          background: #f5f6f5;
+          width: 375px;
+          border: 1px solid #939393;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px; }
+          body #container #myAccount .content .contacts .inner-table-title {
+            border-top-right-radius: 4px;
+            -moz-border-top-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            -moz-border-top-left-radius: 4px;
+            -webkit-border-top-left-radius: 4px;
+            background: white;
+            background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
+            background: -moz-linear-gradient(-90deg, white, #d7d7d7);
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #212222;
+            text-align: left;
+            border-bottom: 1px solid #939393;
+            padding-left: 7px; }
+          body #container #myAccount .content .contacts .inner-table-content {
+            border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-bottom-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            padding: 5px;
+            float: none; }
+        body #container #myAccount .content .products {
+          margin-top: 15px;
+          background: #f5f6f5;
+          width: 375px;
+          border: 1px solid #939393;
+          border-radius: 4px;
+          -moz-border-radius: 4px;
+          -webkit-border-radius: 4px; }
+          body #container #myAccount .content .products .inner-table-title {
+            border-top-right-radius: 4px;
+            -moz-border-top-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            -moz-border-top-left-radius: 4px;
+            -webkit-border-top-left-radius: 4px;
+            background: white;
+            background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d7d7d7));
+            background: -moz-linear-gradient(-90deg, white, #d7d7d7);
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #212222;
+            text-align: left;
+            border-bottom: 1px solid #939393;
+            padding-left: 7px; }
+          body #container #myAccount .content .products #products-header.inner-table-content {
+            border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-bottom-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            padding: 0;
+            float: none; }
+          body #container #myAccount .content .products #products-content.inner-table-content {
+            border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-bottom-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            padding: 0 0 7px 0;
+            float: none; }
+    body #container #bottom {
+      position: relative;
+      z-index: 0;
+      width: 409px; }

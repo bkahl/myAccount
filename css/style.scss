@@ -194,92 +194,138 @@ table{
   }
 }
 
+.top-radial-gradient-bg {
+  background: none repeat scroll 0 0 #5C6164;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 -38px 175px #5b646b;
+  -moz-box-shadow: 0 -38px 175px #5b646b;
+  box-shadow: 0 -38px 175px #5b646b;
+  height: 350px;
+  left: 0;
+  position: absolute;
+  width: 406px;
+}
+
+.bottom-radial-gradient-bg {
+  background: none repeat scroll 0 0 #5C6164;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 38px 175px #5b646b;
+  -moz-box-shadow: 0 38px 175px #5b646b;
+  box-shadow: 0 38px 175px #5b646b;
+  height: 320px;
+  left: 0;
+  position: relative;
+  width: 320px;
+}
+
 body{
   background: $bodyBkgdImg;
-
-  #myAccount{
-    margin-top: 50px;
-    width: 405px;
-    border: 1px solid $myAccountBorderColor;
-    font: $myAccountFontSize $myAccountFont;
-    color: $myAccountColor;
-    background: $myAccountBackgroundColor;
-    @include borderRadius($myAccountBorderRadius);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y:hidden;
+  box-shadow:inset 0 0 75px #202427;
+  -moz-box-shadow:inset 0 0 75px #202427;
+  
+  #container{
+    height: 100%;
     
-    .title{
-      @include borderTableTopRadius($myAccountBorderRadius);
-      @include tableHeaderBackground($titleBarGradientFromColor, $titleBarGradientToColor);
-      @include tableTitle($mainTitleHeight, $mainTitleLineHeight, $mainTitleFontSize, bold, $mainTitleColor, center, $myAccountInnerBorderColor);
+    #myAccount{
+      margin-top: 50px;
+      width: 405px;
+      border: 1px solid $myAccountBorderColor;
+      font: $myAccountFontSize $myAccountFont;
+      color: $myAccountColor;
+      background: $myAccountBackgroundColor;
+      @include borderRadius($myAccountBorderRadius);
+
+      .title{
+        @include borderTableTopRadius($myAccountBorderRadius);
+        @include tableHeaderBackground($titleBarGradientFromColor, $titleBarGradientToColor);
+        @include tableTitle($mainTitleHeight, $mainTitleLineHeight, $mainTitleFontSize, bold, $mainTitleColor, center, $myAccountInnerBorderColor);
+      }
+
+      .content{
+        padding: $mainContentPadding;
+        @include borderTableBottomRadius($myAccountBorderRadius);
+
+        .director{
+          float: left;
+          margin-bottom: 15px;
+          background: $innerTableBackgroundColor;
+          @include table($smallTableWidth, $myAccountInnerBorderColor);
+          @include borderRadius($innerTableRadius);
+
+          .inner-table-title{
+            @include innerTableTitle(7px);
+          }
+
+          .inner-table-content{
+            @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
+          }
+        }
+
+        .rep{
+          float: right;
+          margin-bottom: 15px;
+          background: $innerTableBackgroundColor;
+          @include table($smallTableWidth, $myAccountInnerBorderColor);
+          @include borderRadius($innerTableRadius);
+
+          .inner-table-title{
+            @include innerTableTitle(7px);
+          }
+
+          .inner-table-content{
+            @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
+          }
+        }
+
+        .contacts{
+          background: $innerTableBackgroundColor;
+          @include table($bigTableWidth, $myAccountInnerBorderColor);
+          @include borderRadius($innerTableRadius);
+
+          .inner-table-title{
+            @include innerTableTitle(7px);
+          }
+
+          .inner-table-content{
+            @include innerTableContent($innerTableRadius, 5px, none);
+          }
+        }
+
+        .products{
+          margin-top: 15px;
+          background: $innerTableBackgroundColor;
+          @include table($bigTableWidth, $myAccountInnerBorderColor);
+          @include borderRadius($innerTableRadius);
+
+          .inner-table-title{
+            @include innerTableTitle(7px);
+          }
+
+          #products-header.inner-table-content{
+            @include innerTableContent($innerTableRadius, 0, none);
+          }
+          #products-content.inner-table-content{
+            @include innerTableContent($innerTableRadius, 0 0 7px 0, none);
+          }
+        }
+      }
     }
     
-    .content{
-      padding: $mainContentPadding;
-      @include borderTableBottomRadius($myAccountBorderRadius);
-      
-      .director{
-        float: left;
-        margin-bottom: 15px;
-        background: $innerTableBackgroundColor;
-        @include table($smallTableWidth, $myAccountInnerBorderColor);
-        @include borderRadius($innerTableRadius);
-        
-        .inner-table-title{
-          @include innerTableTitle(7px);
-        }
-        
-        .inner-table-content{
-          @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
-        }
-      }
-      
-      .rep{
-        float: right;
-        margin-bottom: 15px;
-        background: $innerTableBackgroundColor;
-        @include table($smallTableWidth, $myAccountInnerBorderColor);
-        @include borderRadius($innerTableRadius);
-        
-        .inner-table-title{
-          @include innerTableTitle(7px);
-        }
-        
-        .inner-table-content{
-          @include innerTableContent($innerTableRadius, 5px 7px 16px, left);
-        }
-      }
-      
-      .contacts{
-        margin-bottom: 15px;
-        background: $innerTableBackgroundColor;
-        @include table($bigTableWidth, $myAccountInnerBorderColor);
-        @include borderRadius($innerTableRadius);
-              
-        .inner-table-title{
-          @include innerTableTitle(7px);
-        }
-        
-        .inner-table-content{
-          @include innerTableContent($innerTableRadius, 5px, none);
-        }
-      }
-      
-      .products{
-        background: $innerTableBackgroundColor;
-        @include table($bigTableWidth, $myAccountInnerBorderColor);
-        @include borderRadius($innerTableRadius);
-        
-        .inner-table-title{
-          @include innerTableTitle(7px);
-        }
-        
-        .inner-table-content{
-          @include innerTableContent($innerTableRadius, 0 0 7px 0, none);
-        }
-      }
+    #bottom{
+      position: relative; 
+      z-index: 0; 
+      width: 409px;
     }
   }
 }
-
 
 
 
