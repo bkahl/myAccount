@@ -9,7 +9,7 @@
   <body>
     
     <div id="container">
-      <div id="myAccount" style="position: relative; z-index:1;">
+      <div id="myAccount" class="shadow" style="position: relative; z-index:1;">
         <div class="title">My Account Dashboard</div>
         <div class="content">
           <div class="director none"></div>
@@ -40,7 +40,7 @@
   		$().ready(function() {
         $(".director").myAccount({
           type: 'director',
-          info: { name: 'Brad Kahl', phone: '416.848.3238', email: 'brad.kahl@eloqua.com' }
+          info: { name: 'Joe Payne', phone: '416.848.3238', email: 'joe.payne@eloqua.com' }
         });
         $(".rep").myAccount({
           type: 'rep',
@@ -48,26 +48,26 @@
         });
         $(".contacts").myAccount({
           type: 'contacts',
-          baseProductsAndContactsInfo: { product: 'ELOQUA Express', contacts: '2,000,000', renewalDate: '9/29/2012' }
+          baseProductsAndContactsInfo: { product: 'ELOQUA Express', contacts: '200,000,000,000', renewalDate: '3/17/2012' }
         });
         $(".products").myAccount({
           type: 'products',
-          addOnProducts: [{ product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+          addOnProducts: [{ product: 'Best Practices', licenses: '1', renewalDate: '3/28/2012' },
           
-                          // { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '6/29/2012' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '8/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '3/29/2013' },
                           { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
                           { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
-                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '11/29/2013' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '3/16/2012' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '10/29/2014' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '3/15/2012' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '5/16/2012' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '4/29/2012' },
+                          { product: 'Best Practices', licenses: '1', renewalDate: '3/15/2012' },
         
-                          { product: 'ELOQUA Express', licenses: '2 ', renewalDate: '9/29/2012' }]
+                          { product: 'ELOQUA Express', licenses: '2 ', renewalDate: '12/26/2012' }]
         });
         
         var myAccount = document.getElementById('myAccount'),

@@ -53,10 +53,10 @@ $titleBarGradientToColor: #d7d7d7;
 $myAccountFont: "HelveticaNeue-Light","Helvetica Neue Light",helvetica,arial,sans-serif;
 $myAccountFontSize: 11px;
 $myAccountColor: #212222;
-$myAccountBorderColor: #686868;
-$myAccountInnerBorderColor: #939393;
+$myAccountBorderColor: #323435;
+$myAccountInnerBorderColor: #9a9a9a;
 $myAccountBackgroundColor: #e0e1e4;
-$myAccountBorderRadius: 4px;
+$myAccountBorderRadius: 3px;
 
 $mainTitleHeight: 40px;
 $mainTitleLineHeight: 40px;
@@ -69,7 +69,7 @@ $tableTitleHeight: 24px;
 $tableTitleLineHeight: 24px;
 $smallTableWidth: 175px;
 $bigTableWidth: 375px;
-$innerTableRadius: 4px;
+$innerTableRadius: 3px;
 
 $innerTableBackgroundColor: #f5f6f5;
 $innerTitleFontSize: 11px;
@@ -244,16 +244,24 @@ body{
       color: $myAccountColor;
       background: $myAccountBackgroundColor;
       @include borderRadius($myAccountBorderRadius);
+      -moz-box-shadow:    0 0 25px 0 #21222b;
+      -webkit-box-shadow: 0 0 25px 0 #21222b;
+      box-shadow:         0 0 25px 0 #21222b;
 
       .title{
         @include borderTableTopRadius($myAccountBorderRadius);
         @include tableHeaderBackground($titleBarGradientFromColor, $titleBarGradientToColor);
         @include tableTitle($mainTitleHeight, $mainTitleLineHeight, $mainTitleFontSize, bold, $mainTitleColor, center, $myAccountInnerBorderColor);
+        border-bottom: 1px solid #fff;
       }
 
       .content{
         padding: $mainContentPadding;
         @include borderTableBottomRadius($myAccountBorderRadius);
+        border-top: 1px solid #9A9A9A;
+        border-left: 1px solid #EBEBEC;
+        border-right: 1px solid #EBEBEC;
+        border-bottom: 1px solid #EBEBEC;
 
         .director{
           float: left;
