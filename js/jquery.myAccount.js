@@ -29,33 +29,26 @@ function calcTableSize(rt, rd, rv){
 function renewalDate(id,v){
  var m, d, y, difBetweenMonths, difBetweenDays;
  
- m = v.split('/')[0];
- d = v.split('/')[1];
- y = v.split('/')[2];
+ m = v.split('/')[0]*1;
+ d = v.split('/')[1]*1;
+ y = v.split('/')[2]*1;
 
  difBetweenMonths = m-curr_month;
- difBetweenDays = d - curr_date;
+ difBetweenDays = d-curr_date;
  
- if(y = curr_year){
-   if(difBetweenMonths > 3){
-     $(id).css('color','#719037');
-   } 
-   else if(difBetweenMonths <= 3 && difBetweenMonths >= 2){
-     $(id).css('color','#e48f15');
-   } 
-   else if(difBetweenMonths === 1){
-     $(id).css('color','#c82223');
-   } 
-   else if(difBetweenMonths === 0){
-     if(difBetweenDays > 10) {
-        $(id).css('color','#c82223');
-       }
-     else if(difBetweenDays <= 10) {
-       $(id).css('color','#c82223').css('font-weight','bold');
-     }
-   } 
+ if(y === curr_year){
+   if(difBetweenMonths <= 3 && difBetweenMonths > 0){
+      $(id).css('color','#e48f15');
+   }else if(difBetweenMonths === 0 && difBetweenDays <= 0){
+      $(id).css('color','#c82223');
+   }else if(difBetweenMonths === 0 && difBetweenDays > 0){
+      $(id).css('color','#e48f15');
+   }else if(difBetweenMonths < 0){
+      $(id).css('color','#c82223');
+   }  
+ }else if(y < curr_year){
+   $(id).css('color','#c82223');
  }
- 
 }
 
 function myAccount(id,data){
