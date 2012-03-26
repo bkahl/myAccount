@@ -2,7 +2,8 @@ var d = false, r = false, c = false, p = false,
     date = new Date(), 
     curr_month = date.getMonth() + 1,
     curr_date = date.getDate(),
-    curr_year = date.getFullYear();
+    curr_year = date.getFullYear(),
+    b = 0;
 
 function isEven(value){
   if (value%2 === 0) return true;
@@ -53,11 +54,12 @@ function renewalDate(id,v){
 
 function myAccount(id,data){
   
-  var div, tr, count = 0, total;
+  var div, count=0, tr, total;
   
   $(id).removeClass('none');
   
   if(data.type === "director" || data.type === "rep"){
+
       if(data.type === "director") d += true;
       else r += true;
 
@@ -77,7 +79,9 @@ function myAccount(id,data){
           div += "</tbody>";
         div += "</table>";
       div += "</div>";
-      
+
+      b++;
+
     $(id).append(div);
   }else if(data.type === "contacts"){
     c += true;
@@ -154,6 +158,7 @@ function myAccount(id,data){
     $('.products > #products-header .inner-table-content').css('padding','none !important');
     $('.products > #products-content').css('height','101').css('overflow-y','auto').css('overflow-x','hidden').css('padding-bottom','7');
   }
+
 }
 
 (function($){
@@ -193,7 +198,6 @@ function myAccount(id,data){
       if(d) $('.rep').css('width','185');
       if(!d) $('.rep').css('width','100%');
     }
-    if(!d || !r) $('.dynamic-width').css('width','405');
 
     if (options.type === "contacts"){
       calcTableSize('row1Title','row1Dots','row1Value');
@@ -201,6 +205,9 @@ function myAccount(id,data){
       calcTableSize('row3Title','row3Dots','row3Value');
     }
 
+    if(b===1)$('.dynamic-width').css('width','405');
+    if(b===2)$('.dynamic-width').css('width','165');
+    
 		return this;	
 	};
 
