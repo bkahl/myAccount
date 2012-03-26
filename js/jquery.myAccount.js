@@ -62,8 +62,8 @@ function myAccount(id,data){
       else r += true;
 
       div = "<div class='inner-table-title'>"+data.title+"</div>";
-      div += "<div class='inner-table-content'>";
-        div += "<table>";
+      div += "<div class='inner-table-content dynamic-width' style='overflow-x: scroll;'>";
+        div += "<table style='float: left;'>";
           div += "<tbody>";
             div += "<tr>";
               div += "<td class='name' style='padding-top: 2px;'>"+data.info.name+"</td>";
@@ -72,7 +72,7 @@ function myAccount(id,data){
               div += "<td class='phone' style='padding-top: 4px;'>"+data.info.phone+"</td>";
             div += "</tr>";
             div += "<tr>";
-              div += "<td class='email' style='padding-top: 4px;'><a href='mailto:"+data.info.email+"'/a>"+data.info.email+"</td>";
+              div += "<td class='email' style='padding-top: 4px;'><a href='mailto:"+data.info.email+"' title='"+data.info.email+"'/a>"+data.info.email+"</td>";
             div += "</tr>";
           div += "</tbody>";
         div += "</table>";
@@ -187,13 +187,14 @@ function myAccount(id,data){
     myAccount(id, opts);
     
     if(d) {
-      if(r) $('.director').css('width','175');
+      if(r) $('.director').css('width','185');
       if(!r) $('.director').css('width','100%');
     }else if(r) {
-      if(d) $('.rep').css('width','175'); $('.rep').css('width','175');
+      if(d) $('.rep').css('width','185');
       if(!d) $('.rep').css('width','100%');
     }
-    
+    if(!d || !r) $('.dynamic-width').css('width','405');
+
     if (options.type === "contacts"){
       calcTableSize('row1Title','row1Dots','row1Value');
       calcTableSize('row2Title','row2Dots','row2Value');

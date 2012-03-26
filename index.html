@@ -13,8 +13,8 @@
       <div id="myAccount" style="position: relative; z-index:1;">
         <div class="title">My Account Dashboard</div>
         <div class="content">
-          <div class="director none"></div>
-          <div class="rep none"></div>
+          <div class="director none" style="overflow: hidden;"></div>
+          <div class="rep none" style="overflow: hidden;"></div>
           
           <div style="clear: both;"></div>
           
@@ -29,6 +29,7 @@
         <div class="top-radial-gradient-bg"></div>
         <div class="bottom-radial-gradient-bg"></div>
         <img src="images/bottom-shadow.png" width="409" height="23">
+        <div class="footer-note">Please contact your Account Director or Eloqua Support for details about your Eloqua contract.</div>
       </div>
 
     </div>
@@ -39,15 +40,15 @@
   		$().ready(function() {
         $(".director").myAccount({
           type: 'director',
-          info: { name: 'Brad Kahl', phone: '416.848.3238', email: 'bkahl1984@gmail.com' }
+          info: { name: 'Joe Payne', phone: '416.848.3238', email: 'joe.payne@eloqua.comdddddddddddddddddds' }
         });
         $(".rep").myAccount({
           type: 'rep',
-          info: { name: 'Bob Villa', phone: '416.848.3238', email: 'bob.villa@thisoldhouse.com' }
+          info: { name: 'Bob Villa', phone: '416.848.3238', email: 'bob.villa@thisoldhouse.comddddddddddddddddfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfsddddddddds' }
         });
         $(".contacts").myAccount({
           type: 'contacts',
-          baseProductsAndContactsInfo: { product: 'ELOQUA Express', contacts: '200,000,000,000', renewalDate: '3/20/2012' }
+          baseProductsAndContactsInfo: { product: 'ELOQUA Express', contacts: '2,000,000', renewalDate: '3/11/2012' }
         });
         $(".products").myAccount({
           type: 'products',

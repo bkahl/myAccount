@@ -69,6 +69,12 @@ a {
   float: right;
   text-align: right; }
 
+.footer-note {
+  position: absolute;
+  color: #fff;
+  font: 10px "HelveticaNeue-Light","Helvetica Neue Light",helvetica,arial,sans-serif;
+  letter-spacing: 0.8px; }
+
 table th.name {
   background: #f3f3f3;
   font-weight: bold;
