@@ -4,7 +4,7 @@ var d = false, r = false, c = false, p = false,
     curr_date = date.getDate(),
     curr_year = date.getFullYear(),
     b = 0;
-
+    
 function isEven(value){
   if (value%2 === 0) return true;
   else return false;
@@ -20,11 +20,11 @@ function calcTableSize(rt, rd, rv){
   
   var rowValue = document.getElementById(rv),
       rowValueWidth = rowValue.clientWidth;
-  $(rowValue).css('width',rowValueWidth);
+  $(rowValue).css('width',rowValueWidth+1); // add 1 to fix inconsistencies for firefox
   rowTotal += rowValueWidth;
   
   rowDotsWidth = (rowWidth-rowTotal);    
-  $('#'+rd).css('width',rowDotsWidth); 
+  $('#'+rd).css('width',rowDotsWidth-1); // minus 1 to fix inconsistencies with firefox
 }
 
 function renewalDate(id,v){
